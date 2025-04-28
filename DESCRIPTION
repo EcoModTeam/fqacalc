@@ -2,8 +2,9 @@ Package: fqacalc
 Title: Calculate Floristic Quality Assessment Metrics
 Version: 1.1.0.9000
 Authors@R: c(
-    person("Iris", "Foxfoot", , "iris.r.foxfoot@usace.army.mil", role = c("aut", "cre")),
-    person("U.S. Army Engineer Research and Development Center", role = c("cph", "fnd"))
+    person("Iris", "Foxfoot", email = "ifoxfoot@gmail.com", role = c("aut"),
+    person("U.S. Army Engineer Research and Development Center", 
+    email = "ecomodteam@usace.army.mil", role = c("cph", "fnd", "cre")))
   )
 Description: A collection of functions for calculating Floristic Quality
     Assessment (FQA) metrics using regional FQA databases that have been
@@ -31,3 +32,5 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 VignetteBuilder: knitr
+URL: https://github.com/EcoModTeam/fqacalc
+BugReports: https://github.com/EcoModTeam/fqacalc/issues
