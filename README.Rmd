@@ -37,7 +37,7 @@ You can also install the development version of `fqacalc` from [GitHub](https://
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("ifoxfoot/fqacalc")
+devtools::install_github("EcoModTeam/fqacalc")
 ```
 
 ```{r}

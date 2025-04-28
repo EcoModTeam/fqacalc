@@ -2,6 +2,12 @@
 
 # fqacalc 1.1.0
 
+Ownership of `fqacalc` was transferred to the EcoModTeam github organization. 
+- The readme was updated to describe how to download the development version of the package from the correct github account. 
+- Authorship was also edited to reflect updated point of contact information.
+
+# fqacalc 1.1.0
+
 ## Breaking Changes
 
 `fqadata` was updated to version 1.1.0 in the description file, producing the following changes: 
