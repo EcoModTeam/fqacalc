@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ifoxfoot/fqacalc/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/ifoxfoot/fqacalc/actions/workflows/check-standard.yaml)
+[![R-CMD-check](https://github.com/EcoModTeam/fqacalc/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/EcoModTeam/fqacalc/actions/workflows/check-standard.yaml)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/fqacalc)](https://cran.r-project.org/package=fqacalc)
 <!-- badges: end -->
 
@@ -15,9 +15,9 @@ This package provides functions for calculating Floristic Quality
 Assessment (FQA) metrics using regional FQA databases that have been
 approved or approved with reservations as ecological planning models by
 the U.S. Army Corps of Engineers (USACE). These databases are stored in
-a sister R package, [fqadata](https://github.com/ifoxfoot/fqadata). Both
-packages were developed for the USACE by the U.S. Army Engineer Research
-and Development Center’s Environmental Laboratory.
+a sister R package, [fqadata](https://github.com/EcoModTeam/fqadata).
+Both packages were developed for the USACE by the U.S. Army Engineer
+Research and Development Center’s Environmental Laboratory.
 
 To complete this tutorial interactively, follow along in R studio.
 
@@ -33,7 +33,7 @@ You can also install the development version of `fqacalc` from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("ifoxfoot/fqacalc")
+devtools::install_github("EcoModTeam/fqacalc")
 ```
 
 ``` r
