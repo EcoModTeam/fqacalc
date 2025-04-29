@@ -1,0 +1,32 @@
+Package: fqacalc
+Title: Calculate Floristic Quality Assessment Metrics
+Version: 1.1.0
+Authors@R: c(
+    person("Iris", "Foxfoot", , "iris.r.foxfoot@usace.army.mil", role = c("aut", "cre")),
+    person("U.S. Army Engineer Research and Development Center", role = c("cph", "fnd"))
+  )
+Description: A collection of functions for calculating Floristic Quality
+    Assessment (FQA) metrics using regional FQA databases that have been
+    approved or approved with reservations as ecological planning models
+    by the U.S. Army Corps of Engineers (USACE). For information on FQA
+    see Spyreas (2019) <doi:10.1002/ecs2.2825>. These databases are stored
+    in a sister R package, 'fqadata'. Both packages were developed for the
+    USACE by the U.S. Army Engineer Research and Development Center’s
+    Environmental Laboratory.
+License: MIT + file LICENSE
+Depends: R (>= 2.10)
+Imports: dplyr, fqadata (>= 1.1.0), magrittr, rlang
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2023-09-26 14:43:17 UTC; u4eewirf
+Author: Iris Foxfoot [aut, cre],
+  U.S. Army Engineer Research and Development Center [cph, fnd]
+Maintainer: Iris Foxfoot <iris.r.foxfoot@usace.army.mil>
+Repository: CRAN
+Date/Publication: 2023-09-26 15:00:02 UTC
+Built: R 4.2.0; ; 2023-09-27 12:25:22 UTC; unix

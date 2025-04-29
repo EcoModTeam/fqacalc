@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Introduction</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Introduction</h1>
+
+
+
+<div id="a-floristic-quality-assessment-calculator-for-r" class="section level2">
+<h2>A Floristic Quality Assessment Calculator for R</h2>
+<p>This package provides functions for calculating Floristic Quality
+Assessment (FQA) metrics using regional FQA databases that have been
+approved or approved with reservations as ecological planning models by
+the U.S. Army Corps of Engineers (USACE). These databases are stored in
+a sister R package, <a href="https://github.com/ifoxfoot/fqadata">fqadata</a>. Both packages
+were developed for the USACE by the U.S. Army Engineer Research and
+Development Center’s Environmental Laboratory.</p>
+<p>To complete this tutorial interactively, follow along in R
+studio.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#attach packages required for this tutorial</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fqacalc) <span class="co">#for FQA calculations</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co">#for data manipulation</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Attaching package: &#39;dplyr&#39;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:stats&#39;:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     filter, lag</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; The following objects are masked from &#39;package:base&#39;:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span></code></pre></div>
+</div>
+<div id="package-data" class="section level2">
+<h2>Package Data</h2>
+<p><code>fqacalc</code> contains all regional FQA databases that have
+been either fully approved or approved with reservations for use by the
+U.S. Army Corps of Engineers. By referencing these databases, the
+package can assign a Coefficient of Conservatism (or C Value) to each
+plant species that the user inputs. A list of regional FQA databases can
+be viewed using the <code>db_names()</code> function, and specific FQA
+databases can be accessed using the <code>view_db()</code> function.
+Below is an example of how to view one of the regional databases.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view a list of all available databases</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">db_names</span>()<span class="sc">$</span>fqa_db)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;appalachian_mountains_2013&quot;         &quot;atlantic_coastal_pine_barrens_2018&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [3] &quot;chicago_region_2017&quot;                &quot;coastal_plain_southeast_2013&quot;      </span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [5] &quot;colorado_2020&quot;                      &quot;dakotas_excluding_black_hills_2017&quot;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#NOTE citations for lists can be viewed using db_names()$citation</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#store the Colorado database as an object</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>colorado <span class="ot">&lt;-</span> <span class="fu">view_db</span>(<span class="st">&quot;colorado_2020&quot;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#view it</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(colorado)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  name              name_origin acronym accepted_scientific_name</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       ABIES BIFOLIA accepted_scientific_name   ABBI3            Abies bifolia</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    ABIES LASIOCARPA                  synonym    &lt;NA&gt;            Abies bifolia</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      ABIES CONCOLOR accepted_scientific_name    ABCO           Abies concolor</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4   ABRONIA ELLIPTICA accepted_scientific_name    ABEL        Abronia elliptica</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    ABRONIA FRAGRANS accepted_scientific_name   ABFR2         Abronia fragrans</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 ABRONIA GLABRIFOLIA accepted_scientific_name    ABAR      Abronia glabrifolia</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          family nativity c  w wetland_indicator physiognomy  duration</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      Pinaceae   native 5  1              FACU        tree perennial</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      Pinaceae   native 5  1              FACU        tree perennial</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      Pinaceae   native 5 NA              &lt;NA&gt;        tree perennial</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4 Nyctaginaceae   native 4 NA              &lt;NA&gt;        forb perennial</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5 Nyctaginaceae   native 6 NA              &lt;NA&gt;        forb perennial</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6 Nyctaginaceae   native 9 NA              &lt;NA&gt;        forb perennial</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   common_name        fqa_db</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        &lt;NA&gt; colorado_2020</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2        &lt;NA&gt; colorado_2020</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3        &lt;NA&gt; colorado_2020</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4        &lt;NA&gt; colorado_2020</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5        &lt;NA&gt; colorado_2020</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6        &lt;NA&gt; colorado_2020</span></span></code></pre></div>
+<p><code>fqacalc</code> also comes with sample inventory data from
+Crooked Island, Michigan, downloaded from the <a href="https://universalfqa.org/">Universal FQA Calculator</a>. The data
+set is called <code>crooked_island</code> and is used in this tutorial
+to demonstrate how the package works. When calculating metrics for
+crooked_island, use the ‘michigan_2014’ regional database.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#view the data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(crooked_island)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   acronym  common_name                    name</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  ABIBAL   balsam fir          Abies balsamea</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  AMMBRE marram grass Ammophila breviligulata</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  ANTELE  white camas        Anticlea elegans</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  ARCUVA    bearberry Arctostaphylos uva-ursi</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  ARTCAM     wormwood    Artemisia campestris</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6  CALEPI    reedgrass  Calamagrostis epigeios</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#print the dimensions (35 rows and 3 columns)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(crooked_island)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 35  3</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#view the documentation for the data set (bottom right pane of R studio)</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>?crooked_island</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#load the data set into local environment</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>crooked_island <span class="ot">&lt;-</span> crooked_island</span></code></pre></div>
+</div>
+<div id="reading-data-into-r" class="section level2">
+<h2>Reading Data into R</h2>
+<p>Data (inventory or transect) can be read into R for analysis using
+base R or the <code>readxl</code> package (for .xls or .xlsx files).</p>
+<p>If the data is a csv file, it can be read in using
+<code>read.csv()</code>. For example, code to read in data might look
+like <code>my_data &lt;- read.csv(&quot;path/to/my/data.csv&quot;)</code>. If the
+data is in an Excel file, it can be read in with the same code, but
+replace <code>read.csv()</code> with <code>read_excel()</code>.</p>
+<p>In order to calculate FQA metrics using <code>fqacalc</code>, the
+data must be in the following format:</p>
+<ol style="list-style-type: decimal">
+<li><p>The data must have either a column named <code>name</code>
+containing scientific names of plant species, or a column named
+<code>acronym</code> containing acronyms of plant species. Different
+regional FQA databases use different naming conventions and have
+different ways of creating acronyms (and some don’t have acronyms!) so
+be sure to look at the relevant regional database to check that the site
+assessment is using the same conventions. Names/acronyms do not have to
+be in the same case, but otherwise must exactly match their counterpart
+in the regional FQA database in order to be recognized by
+<code>fqacalc</code> functions.</p></li>
+<li><p>If the user is calculating cover-weighted metrics, the data must
+have another column containing cover values and it must be called
+<code>cover</code>. If the cover values are in percent cover, they must
+be between 0-100. If they are in a cover class, such as the
+Braun-Blanquet classification system, they must be correct for that
+class or else they won’t be recognized. See the section on
+cover-weighted functions to learn more about cover classes.</p></li>
+<li><p>If the user is calculating cover-weighted metrics for a transect
+containing multiple plots, the data should also have a column containing
+the plot ID. The plot ID column can have any name, and it can contain
+numbers or characters, as long as the IDs are exactly the same within
+plots but distinct between plots.</p></li>
+</ol>
+<p>In this case, each observation is one row, containing the species
+name or acronym, the cover value, and the plot ID. It might look
+something like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">plot_id</th>
+<th align="left">name</th>
+<th align="right">cover</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">Plant A</td>
+<td align="right">20</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">Plant B</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">Plant C</td>
+<td align="right">35</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">Plant D</td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="functions-that-match-plant-species-from-data-to-regional-fqa-databases" class="section level2">
+<h2>Functions that Match Plant Species from Data to Regional FQA
+Databases</h2>
+<p><code>fqacalc</code> contains two functions that help the user
+understand how the data they input matches up to the regional database:
+<code>accepted_entries()</code> and <code>unassigned_plants()</code>.
+<code>accepted_entries()</code> is a function that shows which plant
+species in the input data frame are successfully matched to species in
+the regional database, and <code>unassigned_plants()</code> shows which
+species are matched but don’t have a C value stored in the regional
+database.</p>
+<div id="what-happens-when-a-plant-species-is-not-in-the-regional-fqa-database" class="section level3">
+<h3>What happens when a plant species is not in the regional FQA
+database?</h3>
+<p><code>accepted_enteries</code> shows which species are recognized,
+but it also provides warnings when a species is not recognized. To
+demonstrate this we can add a mistake to the <code>crooked_island</code>
+data set.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#introduce a typo</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mistake_island <span class="ot">&lt;-</span> crooked_island <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">sub</span>(<span class="st">&quot;Abies balsamea&quot;</span>, <span class="st">&quot;Abies blahblah&quot;</span>, name))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#store accepted entries</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>accepted_entries <span class="ot">&lt;-</span> <span class="fu">accepted_entries</span>(<span class="co">#this is the data</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                                     mistake_island, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="co">#&#39;key&#39; to join data to regional database</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">key =</span> <span class="st">&quot;name&quot;</span>, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="co">#this is the regional database</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                                     <span class="co">#include native AND introduced entries</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">native =</span> <span class="cn">FALSE</span>) </span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Species ABIES BLAHBLAH not listed in database. It will be discarded.</span></span></code></pre></div>
+<p>Now, when we use <code>accepted_entries()</code> to see which species
+were matched to the regional data set, we can see that we received a
+message about the species ‘ABIES BLAHBLAH’ being discarded and we can
+also see that the accepted entries data set we created only has 34
+entries instead of the expected 35 entries.</p>
+</div>
+<div id="what-happens-when-plant-species-dont-have-c-values" class="section level3">
+<h3>What happens when plant species don’t have C values?</h3>
+<p>In some cases, a plant species can be matched to the regional
+database, but the species is not associated with any C Value. Plant
+species that are matched but have no C Value will be excluded from FQA
+metric calculation but they can <em>optionally</em> be included in other
+metrics like species richness, relative cover, relative frequency,
+relative importance, and mean wetness, as well as any summarizing
+functions containing these metrics. This option is denoted with the
+<code>allow_no_c</code> argument.</p>
+<p><code>unassigned_plants()</code> is a function that shows the user
+which plant species have not been assigned a C Value.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#To see unassigned_plants in action we&#39;re going to Montana! </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#first create a df of plants to input</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>no_c_plants<span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;ABRONIA FRAGRANS&quot;</span>, </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">&quot;ACER GLABRUM&quot;</span>, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">&quot;ACER GRANDIDENTATUM&quot;</span>, </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">&quot;ACER PLATANOIDES&quot;</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">#then create a df of unassigned plants</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">unassigned_plants</span>(no_c_plants, <span class="at">key =</span> <span class="st">&quot;name&quot;</span>, <span class="at">db =</span> <span class="st">&quot;montana_2017&quot;</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; montana_2017 does not have wetness coefficients, wetland metrics cannot be calculated.</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  name              name_origin acronym accepted_scientific_name</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    ABRONIA FRAGRANS accepted_scientific_name    &lt;NA&gt;         Abronia fragrans</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 ACER GRANDIDENTATUM accepted_scientific_name    &lt;NA&gt;      Acer grandidentatum</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          family     nativity  c  w wetland_indicator physiognomy duration</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Nyctaginaceae       native NA NA              &lt;NA&gt;        &lt;NA&gt;     &lt;NA&gt;</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2     Aceraceae undetermined NA NA              &lt;NA&gt;        &lt;NA&gt;     &lt;NA&gt;</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                   common_name       fqa_db</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Fragrant White Sand-Verbena montana_2017</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2              Bigtooth Maple montana_2017</span></span></code></pre></div>
+<p>The function returns two species that are in the ‘montana_2017’
+databases but aren’t assigned a C Value.</p>
+</div>
+<div id="how-will-duplicates-be-treated" class="section level3">
+<h3>How will duplicates be treated?</h3>
+<p>If the data contains duplicate species, they will be excluded from
+certain FQA metrics. For example, species richness counts the number of
+unique species, so duplicates are not allowed. Generally, duplicates are
+excluded for all unweighted (inventory) metrics but can optionally be
+included in cover-weighted metrics and are always included in relative
+metrics.</p>
+<p>Duplicate behavior in cover-weighted functions is controlled by the
+<code>allow_duplicates</code> argument and the <code>plot_id</code>
+argument. If <code>allow_duplicates = FALSE</code>, no duplicate species
+will be allowed at all, no matter how <code>plot_id</code> is set. If
+<code>allow_duplicates = TRUE</code> and the <code>plot_id</code>
+argument is set, duplicate species will be allowed <em>if they are in
+different plots</em>.</p>
+<p>If there are duplicates, and the user is attempting to perform a
+cover-weighted calculation where duplicates are not allowed, the
+duplicated species will be condensed into one entry with an aggregate
+cover value. A message will notify the user if this occurs. See this
+example.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#write a dataframe with duplicates</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>transect <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">acronym  =</span> <span class="fu">c</span>(<span class="st">&quot;ABEESC&quot;</span>, <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>, </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;AMMBRE&quot;</span>, <span class="st">&quot;ANTELE&quot;</span>, <span class="st">&quot;ABEESC&quot;</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">cover =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">4</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">7</span>, <span class="dv">60</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">plot_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#set allow_duplicates to FALSE</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cover_FQI</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">native =</span> <span class="cn">FALSE</span>, <span class="at">allow_duplicates =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Duplicate entries detected. Duplicates will only be counted once. Cover values of duplicate species will be added together.</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 11.89212</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#set allow_duplicates to TRUE</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#but set plot_id so duplicates will not be allowed within the same plot</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cover_FQI</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">native =</span> <span class="cn">FALSE</span>, <span class="at">allow_duplicates =</span> <span class="cn">FALSE</span>, <span class="at">plot_id =</span> <span class="st">&quot;plot_id&quot;</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Duplicate entries detected. Duplicates will only be counted once. Cover values of duplicate species will be added together.</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 11.35398</span></span></code></pre></div>
+</div>
+<div id="will-synonyms-be-recognized" class="section level3">
+<h3>Will synonyms be recognized?</h3>
+<p>Some regional FQA databases include accepted scientific names as well
+as commonly used synonyms. As long as these synonyms are in the regional
+database, they will be recognized by <code>fqacalc</code> functions.
+There are a few important rules regarding synonyms.</p>
+<ol style="list-style-type: decimal">
+<li><p>If both the synonym and the accepted name are used in the data,
+the synonym will be converted to the accepted name and both observations
+will only count as <em>one</em> species.</p></li>
+<li><p>If the data contains a name that is listed as a synonym to one
+species and an accepted name to a different species, it will default to
+the species with the matching accepted name.</p></li>
+<li><p>If the data contains a species that is listed as a synonym to
+multiple species in the regional FQA database, this entry will
+<em>not</em> be included! To include the species, enter the accepted
+scientific name instead of the synonym.</p></li>
+</ol>
+<p>In all of these cases, <code>fqacalc</code> functions will print
+messages to warn the user about synonym issues. See this example:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#df where some entries are listed as accepted name and synonym of other species</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>synonyms <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;CAREX FOENEA&quot;</span>, <span class="st">&quot;ABIES BIFOLIA&quot;</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cover =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">10</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_c</span>(synonyms, <span class="at">key =</span> <span class="st">&quot;name&quot;</span>, <span class="at">db =</span> <span class="st">&quot;wyoming_2017&quot;</span>, <span class="at">native =</span> F)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; CAREX FOENEA is an accepted scientific name and a synonym. It will default to accepted scientific name.</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6</span></span></code></pre></div>
+</div>
+</div>
+<div id="unweighted-inventory-fqi-metrics" class="section level2">
+<h2>Unweighted (Inventory) FQI Metrics</h2>
+<p><code>fqacalc</code> contains a variety of functions that calculate
+Total Species Richness, Native Species Richness, Mean C, Native Mean C,
+Total FQI, Native FQI, and Adjusted FQI. All of these functions
+eliminate duplicate species and species that cannot be found in the
+regional database. All but Total Species Richness and Native Species
+Richness automatically eliminate species that are not associated with a
+C Value.</p>
+<div id="function-arguments" class="section level4">
+<h4>Function Arguments</h4>
+<p>In general, all of these metric functions have the same
+arguments.</p>
+<ul>
+<li><p><strong>x</strong>: A data frame containing a list of plant
+species. This data frame <em>must</em> have one of the following
+columns: <code>name</code> or <code>acronym</code>.</p></li>
+<li><p><strong>key</strong>: A character string representing the column
+that will be used to join the input <code>x</code> with the regional FQA
+database. If a value is not specified the default is <code>name</code>.
+<code>name</code> and <code>acronym</code> are the only acceptable
+values for key.</p></li>
+<li><p><strong>db</strong>: A character string representing the regional
+FQA database to use. See <code>db_names()</code> for a list of potential
+values.</p></li>
+<li><p><strong>native</strong>: native Boolean (TRUE or FALSE). If TRUE,
+calculate metrics using only native species.</p></li>
+</ul>
+<p>Additionally, <code>species_richness()</code> and
+<code>all_metrics()</code> have an argument called
+<code>allow_no_c</code>. If <code>allow_no_c = TRUE</code> than species
+that are in the regional FQA database but don’t have C Values will be
+included. If <code>allow_no_c</code> is FALSE, then these species will
+be omitted. This argument is also found in <code>mean_w()</code> and all
+of the relative functions.</p>
+</div>
+<div id="functions" class="section level4">
+<h4>Functions</h4>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#total mean c</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_c</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">native =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 5.371429</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">#native mean C</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_c</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6.714286</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">#total FQI</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">FQI</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">native =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 31.7778</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#native FQI</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">FQI</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 35.52866</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">#adjusted FQI (always includes both native and introduced species)</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu">adjusted_FQI</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 60.0544</span></span></code></pre></div>
+<p>And finally, <code>all_metrics()</code> prints all of the metrics in
+a data frame format.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#a summary of all metrics (always includes both native and introduced)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#can optionally include species with no C value</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#--if TRUE, this species will count in species richness and mean wetness metrics</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">all_metrics</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">allow_no_c =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                           metrics     values</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1          Total Species Richness 35.0000000</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2         Native Species Richness 28.0000000</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     Introduced Species Richness  7.0000000</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    % of Species with no C Value  0.0000000</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5     % of Species with 0 C Value 20.0000000</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   % of Species with 1-3 C Value  8.5714286</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   % of Species with 4-6 C Value 34.2857143</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  % of Species with 7-10 C Value 37.1428571</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9                          Mean C  5.3714286</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10                  Native Mean C  6.7142857</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11                      Total FQI 31.7778000</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12                     Native FQI 35.5286605</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                   Adjusted FQI 60.0543971</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                   Mean Wetness  0.7142857</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15            Native Mean Wetness  0.8571429</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16                  % Hydrophytes 37.1428571</span></span></code></pre></div>
+<p>All of the functions are documented with help pages.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#In R studio, this line of code will bring up documentation in bottom right pane</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>?all_metrics</span></code></pre></div>
+</div>
+</div>
+<div id="cover-weighted-functions" class="section level2">
+<h2>Cover-Weighted Functions</h2>
+</div>
+<div id="cover-weighted-functions-1" class="section level2">
+<h2>Cover-Weighted Functions</h2>
+<p>Cover-Weighted Functions calculate the same metrics but they are
+weighted by species abundance. Therefore, the input data frame must also
+have a column named <code>cover</code> containing cover values. Cover
+values can be continuous (i.e. percent cover) or classed (e.g. using the
+Braun-Blanquet method).</p>
+<p>The following tables describe how cover classes are converted to
+percent cover. Internally, cover-weighted functions convert cover
+classes to the percent cover midpoint. For this reason, using percent
+cover is recommended over using cover classes.</p>
+<div id="braun-blanquet" class="section level4">
+<h4>Braun-Blanquet</h4>
+<p>Braun-Blanquet, Josias. “Plant sociology. The study of plant
+communities.” Plant sociology. The study of plant communities. First
+ed. (1932).</p>
+<table>
+<thead>
+<tr class="header">
+<th>Braun-Blanquet Classes</th>
+<th>% Cover Range</th>
+<th>Midpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>&lt;1%</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>&lt;5%</td>
+<td>2.5</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>5-25%</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>25-50%</td>
+<td>37.5</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>50-75%</td>
+<td>62.5</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>75-100%</td>
+<td>87.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="carolina-veg-survey" class="section level4">
+<h4>Carolina Veg Survey</h4>
+<p>Lee, Michael T., Robert K. Peet, Steven D. Roberts, and Thomas R.
+Wentworth. “CVS-EEP protocol for recording vegetation.” Carolina
+Vegetation Survey. Retrieved August 17 (2006): 2008.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Carolina Veg Survey Classes</th>
+<th>% Cover Range</th>
+<th>Midpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>&lt;0.1</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>0-1%</td>
+<td>0.5</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1-2%</td>
+<td>1.5</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2-5%</td>
+<td>3.5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>5-10%</td>
+<td>7.5</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>10-25%</td>
+<td>17.5</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>25-50%</td>
+<td>37.5</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>50-75%</td>
+<td>62.5</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>75-95%</td>
+<td>85</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>95-100%</td>
+<td>97.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="daubenmire-classes" class="section level3">
+<h3>Daubenmire Classes</h3>
+<p>R. F. Daubenmire. “A canopy-cover method of vegetational analysis”.
+Northwest Science 33:43–46. (1959)</p>
+<table>
+<thead>
+<tr class="header">
+<th>Daubenmire Classes</th>
+<th>% Cover Range</th>
+<th>Midpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>0-5%</td>
+<td>2.5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>5-25%</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>25-50%</td>
+<td>37.5</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>50-75%</td>
+<td>62.5</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>75-95%</td>
+<td>85</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>95-100%</td>
+<td>97.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="usfs-ecodata-classes" class="section level3">
+<h3>USFS Ecodata Classes</h3>
+<p>Barber, Jim, and Dave Vanderzanden. “The Region 1 existing vegetation
+map products (VMap) release 9.1.” USDA Forest Service, Region 1 (2009):
+200.</p>
+<table>
+<thead>
+<tr class="header">
+<th>USFS Ecodata Classes</th>
+<th>% Cover Range</th>
+<th>Midpoint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>&lt;1%</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>1.1-5%</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>5.1-15%</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>15.1-25%</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>25.1-35%</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>35.1-45%</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>50</td>
+<td>45.1-55%</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>55.1-65%</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>70</td>
+<td>65.1-75%</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>80</td>
+<td>75.1-85%</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>90</td>
+<td>85.1-95%</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<td>98</td>
+<td>95.1-100%</td>
+<td>98</td>
+</tr>
+</tbody>
+</table>
+<p>Cover-Weighted functions come in two flavors: Transect-level and
+plot-level. Transect-level metrics are those that calculate a metric for
+an entire transect, which typically includes multiple plots.
+<code>transect_summary</code> and <code>plot_summary</code> are both
+always calculated at the transect-level. Plot-level metrics calculate a
+metric for a single plot. <code>cover_mean_c</code> and
+<code>cover_FQI</code> can be transect-level or plot-level. It is up to
+the user to decide if they are calculating a transect-level or a
+plot-level metric.</p>
+<p>To calculate <code>cover_mean_c</code> and <code>cover_FQI</code> at
+the transect-level, set <code>allow_duplicate = TRUE</code>, because
+different plots along the transect may contain the same species. It is
+also highly recommended to include a plot ID column and set the
+<code>plot_id</code> argument to be equal to that column name. This will
+allow duplicate species between plots but not allow duplication within
+plots.</p>
+<p>To calculate <code>cover_mean_c</code> and <code>cover_FQI</code> at
+the plot-level, set <code>allow_duplicate = FALSE</code>. There is no
+need to set the <code>plot_id</code> argument because duplicate species
+will not be allowed under any circumstance.</p>
+<p>If duplicated species are found where they are not supposed to be,
+the duplicated entries will only be counted once and their cover values
+will be added together. The user will also receive a message stating
+duplicates have been removed.</p>
+<div id="function-arguments-1" class="section level4">
+<h4>Function Arguments</h4>
+<p>Cover-Weighted Functions have a few additional arguments:</p>
+<ul>
+<li><p><strong>cover_class</strong>: A character string representing the
+cover method used. Acceptable cover methods are:
+<code>&quot;percent_cover&quot;</code>, <code>&quot;carolina_veg_survey&quot;</code>,
+<code>&quot;braun-blanquet&quot;</code>, <code>&quot;doubinmire&quot;</code>, and
+<code>&quot;usfs_ecodata&quot;</code>. <code>&quot;percent_cover&quot;</code> is the default
+and is recommended.</p></li>
+<li><p><strong>allow_duplicates</strong>: Boolean (TRUE or FALSE). If
+TRUE, allow duplicate entries of the same species. If FALSE, do not
+allow species duplication. See cover-weighted function description.
+Setting <code>allow_duplicates</code> to TRUE is best for calculating
+metrics for multiple plots which potentially contain the same species.
+Setting <code>allow_duplicates</code> to FALSE is best for calculating
+metrics for a single plot, where each species is entered once along with
+its total cover value.</p></li>
+<li><p><strong>plot_id</strong>: A character string representing the
+column in <code>x</code> that contains plot identification values.
+<code>plot_id</code> is a required argument in
+<code>plot_summary</code>, where it acts as a grouping variable.
+<code>plot_id</code> is optional but recommended for cover-weighted
+functions and frequency functions. If <code>plot_id</code> is set in a
+cover-weighted function or a frequency function, it only prevents
+duplicates from occurring in the same plot. It does not act as a
+grouping variable.</p></li>
+</ul>
+</div>
+<div id="functions-1" class="section level4">
+<h4>Functions</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#first make a hypothetical plot with cover values</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">acronym  =</span> <span class="fu">c</span>(<span class="st">&quot;ABEESC&quot;</span>, <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>, <span class="st">&quot;ANTELE&quot;</span>),</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Abelmoschus esculentus&quot;</span>, </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Abies balsamea&quot;</span>, <span class="st">&quot;Ammophila breviligulata&quot;</span>, </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Anticlea elegans; zigadenus glaucus&quot;</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cover =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">4</span>, <span class="dv">20</span>, <span class="dv">30</span>))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#now make up a transect</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>transect <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">acronym  =</span> <span class="fu">c</span>(<span class="st">&quot;ABEESC&quot;</span>, <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>, </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;AMMBRE&quot;</span>, <span class="st">&quot;ANTELE&quot;</span>, <span class="st">&quot;ABEESC&quot;</span>, </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>),</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cover =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">4</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">7</span>, <span class="dv">60</span>),</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">plot_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">#plot cover mean c (no duplicates allowed)</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">cover_mean_c</span>(plot, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">native =</span> <span class="cn">FALSE</span>, <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>, </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">allow_duplicates =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 4.923077</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="co">#transect cover mean c (duplicates allowed along unless in the same plot)</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="fu">cover_mean_c</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>             <span class="at">native =</span> <span class="cn">FALSE</span>, <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>,</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">allow_duplicates =</span> <span class="cn">TRUE</span>, <span class="at">plot_id =</span> <span class="st">&quot;plot_id&quot;</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Duplicate entries detected in the same plot. Duplicates in the same plot will be counted once. Cover values of duplicate species will be added together.</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 6.394834</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="co">#cover-weighted FQI </span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#you can choose to allow duplicates depending on if species are in a single plot</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="fu">cover_FQI</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">native =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>,</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">allow_duplicates =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 11.66145</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a><span class="co">#transect summary function (always allows duplicates)</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="fu">transect_summary</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                           metrics     values</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1          Total Species Richness  4.0000000</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2         Native Species Richness  3.0000000</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3     Introduced Species Richness  1.0000000</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    % of Species with no C Value  0.0000000</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5     % of Species with 0 C Value 25.0000000</span></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   % of Species with 1-3 C Value 25.0000000</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7   % of Species with 4-6 C Value  0.0000000</span></span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 8  % of Species with 7-10 C Value 50.0000000</span></span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 9                          Mean C  5.7500000</span></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10                  Native Mean C  7.6666667</span></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11          Cover-Weighted Mean C  5.8307255</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12   Cover-Weighted Native Mean C  9.4665127</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13                      Total FQI 11.5000000</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14                     Native FQI 13.2790562</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15             Cover-Weighted FQI 11.6614509</span></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16      Cover-Weighted Native FQI 16.3964810</span></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17                   Adjusted FQI 66.3952810</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18                   Mean Wetness  1.7500000</span></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19            Native Mean Wetness  0.6666667</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20                  % Hydrophytes 12.5000000</span></span></code></pre></div>
+<p>There is also a plot summary function that summarizes plots along a
+transect. Data is input as a single data frame containing species per
+plot. This data frame must also have a column representing the plot that
+the species was observed in.</p>
+<p>Because it is sometimes useful to calculate the total amount of bare
+ground or un-vegetated water in a plot, the user can also choose to
+include bare ground or water. To get this feature to work, the user must
+set another argument:</p>
+<ul>
+<li><strong>allow_non_veg</strong>: Boolean (TRUE or FALSE). If TRUE,
+allow input to contain un-vegetated ground and un-vegetated water.</li>
+</ul>
+<p>If <code>allow_non_veg</code> is true, the user can include
+“UNVEGETATED GROUND” or “UNVEGETATED WATER” along with plant species.
+They can also use acronyms “GROUND” or “WATER”.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#print transect to view structure of data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>transect_unveg <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">acronym =</span> <span class="fu">c</span>(<span class="st">&quot;GROUND&quot;</span>, <span class="st">&quot;ABEESC&quot;</span>, <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;ANTELE&quot;</span>, <span class="st">&quot;WATER&quot;</span>, <span class="st">&quot;GROUND&quot;</span>, <span class="st">&quot;ABEESC&quot;</span>, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">&quot;ABIBAL&quot;</span>, <span class="st">&quot;AMMBRE&quot;</span>),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">cover =</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">50</span>, <span class="dv">4</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">40</span>, <span class="dv">7</span>, <span class="dv">60</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">quad_id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#plot summary of a transect </span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#duplicates are allowed, unless they are in the same plot</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_summary</span>(<span class="at">x =</span> transect_unveg, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>             <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>, </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>             <span class="at">plot_id =</span> <span class="st">&quot;quad_id&quot;</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Species c(&quot;GROUND&quot;, &quot;WATER&quot;, &quot;GROUND&quot;) does not have a wetness coefficient. It will be omitted from wetness metric calculations.</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   quad_id species_richness native_species_richness mean_wetness   mean_c</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1       1                4                       3     1.750000 5.750000</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2       2                3                       2     3.333333 4.333333</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   native_mean_c cover_mean_c       FQI native_FQI cover_FQI native_cover_FQI</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1      7.666667     4.923077 11.500000  13.279056  9.846154         16.42241</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2      6.500000     5.803738  7.505553   9.192388 10.052370         13.10786</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   adjusted_FQI percent_ground_cover percent_water_cover</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     66.39528                   60                  NA</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2     53.07228                   20                  20</span></span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="relative-functions" class="section level2">
+<h2>Relative Functions</h2>
+<p>Relative functions calculate relative frequency, relative coverage,
+and relative importance for each species, physiognomic group, or family.
+<code>fqacalc</code> also contains a species summary function that
+produces a summary of each species’ relative metrics in a data frame.
+Relative functions always allow duplicate species observations. If a
+plot ID column is indicated using the <code>plot_id</code> argument,
+duplicates will not be allowed if they occur in the same plot. Relative
+functions also always allow “ground” and “water” to be included.</p>
+<p>Relative functions have one additional argument which tells the
+functions what to calculate the relative value of:</p>
+<ul>
+<li><strong>col</strong>: A character string equal to ‘species’,
+‘family’, or ‘physiog’.</li>
+</ul>
+<p>Relative functions do not distinguish between native and
+introduced.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#To calculate the relative value of a tree</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#relative frequency</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">relative_frequency</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col =</span> <span class="st">&quot;physiog&quot;</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   physiognomy relative_frequency</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1        forb               37.5</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2       grass               37.5</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3        tree               25.0</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#can also include bare ground and water in the data </span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#here transect_unveg is data containing ground and water defined previously</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">relative_frequency</span>(transect_unveg, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">col =</span> <span class="st">&quot;physiog&quot;</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          physiognomy relative_frequency</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Unvegetated Ground                 20</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Unvegetated Water                 10</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3               forb                 30</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4              grass                 20</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5               tree                 20</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co">#relative cover</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">relative_cover</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>               <span class="at">col =</span> <span class="st">&quot;family&quot;</span>, <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          family relative_cover</span></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1     Malvaceae      37.344398</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2 Melanthiaceae      12.448133</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3      Pinaceae       4.564315</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4       Poaceae      45.643154</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">#relative importance</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="fu">relative_importance</span>(transect, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>                    <span class="at">col =</span> <span class="st">&quot;species&quot;</span>, <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>)</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                      name relative_importance</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  ABELMOSCHUS ESCULENTUS            31.17220</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2          ABIES BALSAMEA            14.78216</span></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3 AMMOPHILA BREVILIGULATA            41.57158</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4        ANTICLEA ELEGANS            12.47407</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co">#species summary (including ground and water)</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="fu">species_summary</span>(transect_unveg, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>                <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   acronym                    name   nativity  c  w frequency coverage</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1  ABEESC  ABELMOSCHUS ESCULENTUS introduced  0  5         2       90</span></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  ABIBAL          ABIES BALSAMEA     native  3  0         2       11</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3  AMMBRE AMMOPHILA BREVILIGULATA     native 10  5         2       80</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4  ANTELE        ANTICLEA ELEGANS     native 10 -3         1       30</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5  GROUND      UNVEGETATED GROUND       &lt;NA&gt;  0 NA         2       80</span></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6   WATER       UNVEGETATED WATER       &lt;NA&gt;  0 NA         1       20</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   relative_frequency relative_cover relative_importance</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1                 20      28.938907           24.469453</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2                 20       3.536977           11.768489</span></span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3                 20      25.723473           22.861736</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4                 10       9.646302            9.823151</span></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5                 20      25.723473           22.861736</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6                 10       6.430868            8.215434</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="co">#physiognomy summary (including ground and water)</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="fu">physiog_summary</span>(transect_unveg, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, </span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>                <span class="at">cover_class =</span> <span class="st">&quot;percent_cover&quot;</span>)</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          physiognomy frequency coverage relative_frequency relative_cover</span></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Unvegetated Ground         2       80                 20      25.723473</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2  Unvegetated Water         1       20                 10       6.430868</span></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3               forb         3      120                 30      38.585209</span></span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4              grass         2       80                 20      25.723473</span></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5               tree         2       11                 20       3.536977</span></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   relative_importance</span></span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1           22.861736</span></span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2            8.215434</span></span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3           34.292605</span></span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4           22.861736</span></span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5           11.768489</span></span></code></pre></div>
+</div>
+<div id="wetness-metric" class="section level2">
+<h2>Wetness metric</h2>
+<p><code>fqacalc</code> has one wetness metric function called
+<code>mean_w</code>, which calculates the mean wetness coefficient. The
+wetness coefficient is based off of the wetland indicator status.
+Negative wetness coefficients indicate a stronger affinity for wetlands,
+while positive wetness coefficients indicate an affinity for
+uplands.</p>
+<p><code>mean_w</code> can optionally include species without a C value,
+as long as they do have a wetness coefficient.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#mean wetness</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean_w</span>(crooked_island, <span class="at">key =</span> <span class="st">&quot;acronym&quot;</span>, <span class="at">db =</span> <span class="st">&quot;michigan_2014&quot;</span>, <span class="at">allow_no_c =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.7142857</span></span></code></pre></div>
+</div>
+<div id="the-end" class="section level2">
+<h2>The End</h2>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -2,7 +2,9 @@
 
 # fqacalc 1.1.0
 
-Ownership of `fqacalc` was transferred to the EcoModTeam github organization. The maintainer was updated to be the Integrated Ecological Modeling Team and the email to contact maintainers was updated to ecomodteam@usace.army.mil.
+Ownership of `fqacalc` was transferred to the EcoModTeam github organization. 
+- The readme was updated to describe how to download the development version of the package from the correct github account. 
+- Authorship was also edited to reflect updated point of contact information.
 
 # fqacalc 1.1.0
 

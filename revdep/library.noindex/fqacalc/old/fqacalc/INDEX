@@ -1,0 +1,24 @@
+FQI                     Calculate FQI
+accepted_entries        Return A Data Frame of Plant Species That
+                        Successfully Match to the Regional FQA Database
+                        of choice
+adjusted_FQI            Calculate Adjusted FQI
+all_metrics             Print a Summary of Non-Weighted FQA Metrics
+cover_FQI               Calculate Cover-Weighted FQI
+cover_mean_c            Calculate Cover-Weighted Mean C
+crooked_island          A List of Plants from Crooked Island, MI
+db_names                Look Up the Names of Regional FQA Databases
+mean_c                  Calculate Mean C
+mean_w                  Calculate the Mean Wetness Coefficient
+physiog_summary         Create a cover-Weighted Summary of Physiognomic
+                        Groups
+plot_summary            Calculate Plot-level Summary Statistics
+relative_cover          Calculate Relative Cover
+relative_frequency      Calculate Relative Frequency
+relative_importance     Calculate Relative Importance
+species_richness        Calculate Number of Species
+species_summary         Create A Cover-Weighted Summary of Species
+transect_summary        Print a Summary of Cover-Weighted FQA Metrics
+unassigned_plants       Return Data Frame of Plant Species That Have No
+                        C Value
+view_db                 View a Regional FQA Database

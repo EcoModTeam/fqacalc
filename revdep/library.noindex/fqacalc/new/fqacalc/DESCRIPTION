@@ -1,0 +1,36 @@
+Package: fqacalc
+Title: Calculate Floristic Quality Assessment Metrics
+Version: 1.1.0.9000
+Authors@R: c(
+    person("Iris", "Foxfoot", , email = "ifoxfoot@gmail.com", role = c("aut", "cre"),
+    person("U.S. Army Engineer Research and Development Center", "Integrated Ecological Modeling Team", , email = "ecomodteam@usace.army.mil", role = c("cph", "fnd")))
+  )
+Description: A collection of functions for calculating Floristic Quality
+    Assessment (FQA) metrics using regional FQA databases that have been
+    approved or approved with reservations as ecological planning models
+    by the U.S. Army Corps of Engineers (USACE). For information on FQA
+    see Spyreas (2019) <doi:10.1002/ecs2.2825>. These databases are stored
+    in a sister R package, 'fqadata'. Both packages were developed for the
+    USACE by the U.S. Army Engineer Research and Development Center’s
+    Environmental Laboratory.
+License: MIT + file LICENSE
+Depends: R (>= 2.10)
+Imports: dplyr, fqadata (>= 1.1.0), magrittr, rlang
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+VignetteBuilder: knitr
+URL: https://github.com/EcoModTeam/fqacalc
+BugReports: https://github.com/EcoModTeam/fqacalc/issues
+RemoteType: local
+RemoteUrl: /Users/irisfoxfoot/Desktop/fqacalc
+NeedsCompilation: no
+Packaged: 2025-04-29 01:05:40 UTC; irisfoxfoot
+Author: Iris Foxfoot [aut, cre] (U.S. Army Engineer Research and Development
+    Center Integrated Ecological Modeling Team
+    <ecomodteam@usace.army.mil> [cph, fnd])
+Maintainer: Iris Foxfoot <ifoxfoot@gmail.com>
+Built: R 4.2.3; ; 2025-04-29 01:05:40 UTC; unix
