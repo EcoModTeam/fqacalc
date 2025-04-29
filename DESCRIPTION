@@ -2,8 +2,8 @@ Package: fqacalc
 Title: Calculate Floristic Quality Assessment Metrics
 Version: 1.1.0.9000
 Authors@R: c(
-    person("Iris", "Foxfoot", email = "ifoxfoot@gmail.com", role = c("aut", "cre"),
-    person("U.S. Army Engineer Research and Development Center", "Integrated Ecological Modeling Team", email = "ecomodteam@usace.army.mil", role = c("cph", "fnd")))
+    person("Iris", "Foxfoot", , email = "ifoxfoot@gmail.com", role = c("aut", "cre"),
+    person("U.S. Army Engineer Research and Development Center", "Integrated Ecological Modeling Team", , email = "ecomodteam@usace.army.mil", role = c("cph", "fnd")))
   )
 Description: A collection of functions for calculating Floristic Quality
     Assessment (FQA) metrics using regional FQA databases that have been
