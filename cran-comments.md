@@ -1,4 +1,4 @@
-## Version 1.1.0
+## Version 1.1.1
 
 ## R CMD check results
 0 errors | 0 warnings | 0 notes
