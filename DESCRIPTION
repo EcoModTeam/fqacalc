@@ -1,6 +1,6 @@
 Package: fqacalc
 Title: Calculate Floristic Quality Assessment Metrics
-Version: 1.1.1
+Version: 1.1.1.9000
 Authors@R: c(
     person("Iris", "Foxfoot", , role = c("aut")),
     person("Todd", "Swannack", , email = "tswannack@gmail.com", role = c("cre")),
