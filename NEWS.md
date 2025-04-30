@@ -1,4 +1,4 @@
-# fqacalc (development version)
+# fqacalc 1.1.1
 
 # fqacalc 1.1.1
 
