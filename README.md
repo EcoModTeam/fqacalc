@@ -828,4 +828,10 @@ mean_w(crooked_island, key = "acronym", db = "michigan_2014", allow_no_c = FALSE
 #> [1] 0.7142857
 ```
 
+## Known issues
+
+Known issues are documented here and will be resolved during future updates. Thank you for your patience.
+
+#> 1    The Michigan plants database has a typo for "TYPHA xGLAUCA" that results in the species being excluded from the dataset.
+
 ## The End
